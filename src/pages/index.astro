@@ -1,0 +1,251 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import {
+  identity,
+  experience,
+  projects,
+  projectsIntro,
+  skillGroups,
+  education,
+  certifications,
+  openSource,
+} from '../data/profile';
+
+const featured = projects.find((p) => p.featured)!;
+const rest = projects.filter((p) => !p.featured);
+---
+
+<Base
+  title="Shay Henderson — Infrastructure & Cloud"
+  description={`${identity.pitch} ${identity.availability}.`}
+>
+  <!-- ============ hero ============ -->
+  <section class="relative overflow-hidden">
+    <div class="hero-field" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28">
+      <p class="rise rise-1 meta flex items-center gap-2.5 !text-green">
+        <span class="status-dot inline-block size-2 rounded-full bg-green" aria-hidden="true"></span>
+        {identity.availability}
+      </p>
+
+      <h1 class="mt-7">
+        <span class="rise rise-2 block text-xl font-medium text-muted sm:text-2xl">
+          {identity.name}
+        </span>
+        <span
+          class="display rise rise-2 mt-2 block text-[clamp(2.7rem,7.5vw,5.5rem)] text-ink"
+        >
+          Infrastructure<br class="sm:hidden" /> & Cloud
+        </span>
+      </h1>
+
+      <p class="rise rise-3 mt-8 max-w-[34rem] text-lg leading-relaxed text-muted sm:text-xl">
+        {identity.pitch}
+      </p>
+
+      <div class="rise rise-4 mt-10 flex flex-wrap items-center gap-x-7 gap-y-5">
+        <a href="/cv" class="btn-primary max-sm:w-full">
+          View CV <Icon name="arrow" size={16} class="btn-arrow" />
+        </a>
+        <a href={identity.github} class="link-quiet inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="github" /> GitHub
+        </a>
+        <a href={identity.linkedin} class="link-quiet inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="linkedin" /> LinkedIn
+        </a>
+        <a href={`mailto:${identity.email}`} class="link-quiet inline-flex items-center gap-2 text-sm font-medium">
+          <Icon name="mail" /> Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ experience ============ -->
+  <section id="experience" class="scroll-mt-20">
+    <div class="mx-auto max-w-6xl px-5 py-[clamp(4.5rem,9vw,7.5rem)] sm:px-8">
+      <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Experience</h2>
+
+      <ol class="mt-12 space-y-14 border-l border-line pl-6 sm:mt-16 sm:space-y-16 sm:pl-0 sm:[border-left:none]">
+        {
+          experience.map((job) => (
+            <li class="relative grid gap-3 sm:grid-cols-[11rem_1fr] sm:gap-10">
+              <span
+                class="absolute -left-[calc(1.5rem+4.5px)] top-2 size-2 rounded-full bg-amber sm:hidden"
+                aria-hidden="true"
+              />
+              <div class="pt-0.5">
+                <p class="meta !text-amber">{job.dates}</p>
+                <p class="meta mt-1.5">{job.where}</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold leading-snug">
+                  {job.company}
+                  <span class="mt-0.5 block text-base font-medium text-muted">{job.title}</span>
+                </h3>
+                <ul class="mt-4 max-w-[44rem] space-y-2.5">
+                  {job.highlights.map((b) => (
+                    <li class="flex gap-3 text-[0.95rem] leading-relaxed text-muted">
+                      <span class="mt-[0.72em] size-1 shrink-0 rounded-full bg-line" aria-hidden="true" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ projects ============ -->
+  <section id="projects" class="scroll-mt-20 border-t border-line/60 bg-surface/50">
+    <div class="mx-auto max-w-6xl px-5 py-[clamp(4.5rem,9vw,7.5rem)] sm:px-8">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2">
+        <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Projects</h2>
+        <p class="text-[0.95rem] text-muted">{projectsIntro}</p>
+      </div>
+
+      <!-- featured -->
+      <article class="mt-12 rounded-lg border border-line bg-surface p-6 sm:mt-14 sm:p-9">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <h3 class="text-2xl font-semibold">{featured.name}</h3>
+          <ul class="flex flex-wrap gap-x-3 gap-y-1" aria-label="Project details">
+            {featured.tags.map((t) => <li class="meta">{t}</li>)}
+          </ul>
+        </div>
+        <p class="mt-4 max-w-[46rem] leading-relaxed text-muted">{featured.blurb}</p>
+        {
+          featured.href && (
+            <a href={featured.href} class="link-amber mt-5 inline-flex items-center gap-1.5 text-sm font-medium">
+              {featured.linkLabel} <Icon name="external" size={15} />
+            </a>
+          )
+        }
+      </article>
+
+      <!-- the rest: hairline rows, not a card grid -->
+      <div class="mt-2">
+        {
+          rest.map((p) => (
+            <article class="grid gap-2 border-b border-line/70 py-7 last:border-b-0 sm:grid-cols-[14rem_1fr] sm:gap-10 sm:py-8">
+              <div>
+                <h3 class="text-lg font-semibold leading-snug">{p.name}</h3>
+                <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 sm:block sm:space-y-1" aria-label="Project details">
+                  {p.tags.map((t) => (
+                    <li class="meta">{t}</li>
+                  ))}
+                </ul>
+              </div>
+              <div class="max-w-[44rem]">
+                <p class="text-[0.95rem] leading-relaxed text-muted">{p.blurb}</p>
+                {p.href && (
+                  <a href={p.href} class="link-amber mt-3 inline-flex items-center gap-1.5 text-sm font-medium">
+                    {p.linkLabel} <Icon name="external" size={15} />
+                  </a>
+                )}
+                {p.note && <p class="meta mt-3">{p.note}</p>}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ skills ============ -->
+  <section id="skills" class="scroll-mt-20 border-t border-line/60">
+    <div class="mx-auto max-w-6xl px-5 py-[clamp(4.5rem,9vw,7.5rem)] sm:px-8">
+      <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Skills</h2>
+      <div class="mt-12 grid gap-x-14 gap-y-12 sm:grid-cols-2">
+        {
+          skillGroups.map((group) => (
+            <div>
+              <h3 class="text-base font-semibold">{group.title}</h3>
+              <ul class="mt-3 flex max-w-[36rem] flex-wrap gap-x-2 gap-y-1.5 text-[0.95rem] leading-relaxed text-muted">
+                {group.items.map((item, i) => (
+                  <li class="flex items-center gap-2">
+                    {item}
+                    {i < group.items.length - 1 && (
+                      <span class="select-none text-amber" aria-hidden="true">
+                        ·
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ education & certs ============ -->
+  <section id="education" class="scroll-mt-20 border-t border-line/60 bg-surface/50">
+    <div class="mx-auto max-w-6xl px-5 py-[clamp(4.5rem,9vw,7.5rem)] sm:px-8">
+      <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Education & Certifications</h2>
+      <div class="mt-12 grid gap-x-14 gap-y-12 sm:grid-cols-2">
+        <div>
+          <h3 class="text-base font-semibold">Education</h3>
+          <ul class="mt-4 space-y-4">
+            {
+              education.map((e) => (
+                <li>
+                  <p class="text-[0.95rem] font-medium leading-snug">{e.name}</p>
+                  <p class="meta mt-1">
+                    {e.org} · {e.dates}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold">Certifications</h3>
+          <ul class="mt-4 space-y-4">
+            {
+              certifications.map((c) => (
+                <li>
+                  <p class="text-[0.95rem] font-medium leading-snug">{c.name}</p>
+                  <p class="meta mt-1">
+                    {c.org} · {c.dates}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+          <h3 class="mt-10 text-base font-semibold">Open source</h3>
+          <p class="mt-3 max-w-[36rem] text-[0.95rem] leading-relaxed text-muted">{openSource}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ contact ============ -->
+  <section id="contact" class="scroll-mt-20 border-t border-line/60">
+    <div class="mx-auto max-w-6xl px-5 py-[clamp(5rem,10vw,8.5rem)] sm:px-8">
+      <p class="meta flex items-center gap-2.5 !text-green">
+        <span class="status-dot inline-block size-2 rounded-full bg-green" aria-hidden="true"></span>
+        {identity.availability}
+      </p>
+      <h2 class="display mt-6 max-w-[24ch] text-[clamp(1.9rem,4.5vw,3.4rem)]">
+        Hiring for cloud or infrastructure work — or have a project that needs doing?
+      </h2>
+      <a
+        href={`mailto:${identity.email}`}
+        class="link-amber mt-8 inline-block break-all text-[clamp(1.2rem,3vw,2rem)] font-semibold"
+      >
+        {identity.email}
+      </a>
+      <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3">
+        <a href={identity.github} class="link-quiet text-sm font-medium">GitHub</a>
+        <a href={identity.linkedin} class="link-quiet text-sm font-medium">LinkedIn</a>
+        <a href={identity.x} class="link-quiet text-sm font-medium">X</a>
+        <a href="/cv" class="link-quiet text-sm font-medium">CV</a>
+      </div>
+      <p class="mt-8 text-sm text-muted">{identity.location} · Remote</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,336 @@
+@import "tailwindcss";
+
+/*
+ * shayhenderson.dev design tokens — see DESIGN.md (local).
+ * Dark is the default theme; [data-theme="light"] flips the semantic layer.
+ * Contrast for every pairing is verified by scripts/contrast.mjs.
+ */
+:root {
+  --bg: oklch(0.145 0.007 75);
+  --surface: oklch(0.19 0.008 75);
+  --surface-2: oklch(0.235 0.01 75);
+  --ink: oklch(0.935 0.005 80);
+  --muted: oklch(0.71 0.015 75);
+  --line: oklch(0.3 0.012 75);
+  --amber: oklch(0.78 0.135 68);
+  --amber-fill: oklch(0.8 0.13 68);
+  --on-amber: oklch(0.145 0.007 75);
+  --green: oklch(0.76 0.13 150);
+  --glow: oklch(0.78 0.135 68 / 0.07);
+  --grid-line: oklch(0.78 0.135 68 / 0.05);
+}
+
+[data-theme="light"] {
+  --bg: oklch(1 0 0);
+  --surface: oklch(0.965 0.004 75);
+  --surface-2: oklch(0.93 0.006 75);
+  --ink: oklch(0.23 0.012 60);
+  --muted: oklch(0.46 0.02 60);
+  --line: oklch(0.88 0.008 75);
+  --amber: oklch(0.51 0.124 60);
+  --amber-fill: oklch(0.55 0.124 60);
+  --on-amber: oklch(1 0 0);
+  --green: oklch(0.5 0.12 150);
+  --glow: oklch(0.55 0.124 60 / 0.06);
+  --grid-line: oklch(0.55 0.124 60 / 0.07);
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-amber: var(--amber);
+  --color-amber-fill: var(--amber-fill);
+  --color-on-amber: var(--on-amber);
+  --color-green: var(--green);
+  --color-white: #fff;
+  --font-sans: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Martian Mono Variable", ui-monospace, "Cascadia Mono", monospace;
+}
+
+/* ---------- base ---------- */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  /* light-on-dark compensation: looser leading, touch of tracking */
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="light"] body {
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+::selection {
+  background-color: var(--amber);
+  color: var(--on-amber);
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* display type: Archivo pushed wide — the wordmark move */
+.display {
+  font-stretch: 115%;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+/* mono is for functional labels only — never body copy */
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 450;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+/* ---------- hero texture: faint grid + amber glow, fading out ---------- */
+
+.hero-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(42rem 30rem at 18% 8%, var(--glow), transparent 65%),
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 100% 100%, 3.5rem 3.5rem, 3.5rem 3.5rem;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
+}
+
+/* ---------- primary button (the one CTA treatment, used everywhere) ---------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  font-weight: 650;
+  color: var(--on-amber);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--amber-fill) 90%, white),
+    var(--amber-fill)
+  );
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.25),
+    0 1px 2px oklch(0 0 0 / 0.3);
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.3),
+    0 4px 16px color-mix(in oklch, var(--amber-fill) 40%, transparent),
+    0 1px 3px oklch(0 0 0 / 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 3px oklch(0 0 0 / 0.3),
+    0 1px 2px oklch(0 0 0 / 0.2);
+}
+
+.btn-primary .btn-arrow {
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:hover,
+  .btn-primary:active {
+    transform: none;
+  }
+  .btn-primary:hover .btn-arrow {
+    transform: none;
+  }
+}
+
+/* secondary button — quiet sibling of .btn-primary (header, inline actions) */
+
+.btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background-color: color-mix(in oklch, var(--surface) 55%, transparent);
+  padding: 0.42rem 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 550;
+  color: var(--ink);
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.05),
+    0 1px 2px oklch(0 0 0 / 0.12);
+  transition:
+    color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* expanded hit area — the visual chip is compact, the target is 44px */
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+}
+
+.btn-secondary:hover {
+  color: var(--amber);
+  border-color: color-mix(in oklch, var(--amber) 55%, var(--line));
+  background-color: color-mix(in oklch, var(--amber) 7%, transparent);
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.06),
+    0 2px 8px color-mix(in oklch, var(--amber) 18%, transparent);
+}
+
+.btn-secondary:active {
+  background-color: color-mix(in oklch, var(--amber) 12%, transparent);
+  box-shadow: inset 0 1px 2px oklch(0 0 0 / 0.18);
+}
+
+/* ---------- links ---------- */
+
+.link-quiet {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms ease-out;
+}
+
+.link-quiet:hover {
+  text-decoration-color: var(--amber);
+}
+
+.link-amber {
+  color: var(--amber);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms ease-out;
+}
+
+.link-amber:hover {
+  text-decoration-color: var(--amber);
+}
+
+/* ---------- hero entrance: staggered rise. content is visible by
+   default; the animation only runs when motion is allowed ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.6rem);
+    }
+  }
+  .rise {
+    animation: rise 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .rise-1 { animation-delay: 60ms; }
+  .rise-2 { animation-delay: 140ms; }
+  .rise-3 { animation-delay: 220ms; }
+  .rise-4 { animation-delay: 300ms; }
+}
+
+/* status dot pulse — reduced-motion gets a static dot */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--green) 45%, transparent); }
+    70% { box-shadow: 0 0 0 5px transparent; }
+  }
+  .status-dot {
+    animation: pulse-dot 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+}
+
+/* ---------- print (the /cv page) ---------- */
+
+@media print {
+  :root {
+    --bg: oklch(1 0 0);
+    --surface: oklch(0.965 0.004 75);
+    --surface-2: oklch(0.93 0.006 75);
+    --ink: oklch(0.23 0.012 60);
+    --muted: oklch(0.42 0.02 60);
+    --line: oklch(0.85 0.008 75);
+    --amber: oklch(0.48 0.124 60);
+    --amber-fill: oklch(0.55 0.124 60);
+    --on-amber: oklch(1 0 0);
+    --green: oklch(0.45 0.12 150);
+  }
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+  .no-print {
+    display: none !important;
+  }
+  a {
+    text-decoration: none;
+    color: var(--ink);
+  }
+  section, article {
+    break-inside: avoid;
+  }
+  /* tighten the /cv document so the PDF sits on two pages */
+  .cv-page {
+    padding-block: 0;
+  }
+  .cv-page h2 {
+    margin-top: 1.6rem;
+  }
+  .cv-page dl > :not(:last-child),
+  .cv-page .space-y-4 > :not(:last-child) {
+    margin-block-end: 0.7rem;
+  }
+  .cv-page .space-y-10 > :not(:last-child) {
+    margin-block-end: 1.6rem;
+  }
+  .cv-page .space-y-10 > :not(:first-child) {
+    margin-block-start: 0;
+  }
+}
