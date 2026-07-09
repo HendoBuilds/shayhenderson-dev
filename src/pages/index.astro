@@ -13,12 +13,30 @@ import {
 
 const featured = projects.find((p) => p.featured)!;
 const rest = projects.filter((p) => !p.featured);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: identity.name,
+  url: identity.site,
+  image: `${identity.site}/og.png`,
+  jobTitle: identity.role,
+  email: `mailto:${identity.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Scotland',
+    addressCountry: 'GB',
+  },
+  sameAs: [identity.github, identity.linkedin, identity.x],
+};
 ---
 
 <Base
   title="Shay Henderson · Infrastructure & Cloud"
   description={`${identity.pitch} ${identity.availability}.`}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
   <!-- ============ hero ============ -->
   <section class="relative overflow-hidden">
     <div class="hero-field" aria-hidden="true"></div>
