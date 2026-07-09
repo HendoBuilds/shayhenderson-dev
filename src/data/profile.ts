@@ -11,7 +11,7 @@ export const identity = {
   location: 'Scotland, UK',
   availability: 'Open to full-time, part-time and contract work',
   pitch:
-    'I keep production systems healthy: seven years of incident response, automation and internal tooling across Azure, GCP and Cloudflare.',
+    'I keep production systems healthy and build for the web: seven years of incident response, automation, internal tooling and production frontends across Azure, GCP and Cloudflare.',
   email: 'contact@shayhenderson.dev',
   github: 'https://github.com/HendoBuilds',
   linkedin: 'https://www.linkedin.com/in/shay-henderson',
