@@ -5,7 +5,6 @@ import {
   identity,
   experience,
   projects,
-  projectsIntro,
   skillGroups,
   education,
   certifications,
@@ -102,10 +101,7 @@ const rest = projects.filter((p) => !p.featured);
   <!-- ============ projects ============ -->
   <section id="projects" class="scroll-mt-20 border-t border-line/60 bg-surface/50">
     <div class="mx-auto max-w-6xl px-5 py-[clamp(4.5rem,9vw,7.5rem)] sm:px-8">
-      <div class="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-2">
-        <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Projects</h2>
-        <p class="text-[0.95rem] text-muted">{projectsIntro}</p>
-      </div>
+      <h2 class="display text-[clamp(1.9rem,3.5vw,2.75rem)]">Projects</h2>
 
       <!-- featured -->
       <article class="mt-12 rounded-lg border border-line bg-surface p-6 sm:mt-14 sm:p-9">

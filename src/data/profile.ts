@@ -90,9 +90,6 @@ export interface Project {
   featured?: boolean;
 }
 
-export const projectsIntro =
-  'Every side project here serves a community I’m part of.';
-
 export const projects: Project[] = [
   {
     name: 'Skaldic',
