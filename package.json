@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "astro build && wrangler deploy",
-    "cv-pdf": "node scripts/make-cv-pdf.mjs"
+    "cv-pdf": "node scripts/make-cv-pdf.mjs",
+    "og": "node scripts/make-og.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

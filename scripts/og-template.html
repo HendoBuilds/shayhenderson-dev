@@ -1,0 +1,123 @@
+<!doctype html>
+<!-- Social card source (1200x630). Rendered to public/og.png by
+     scripts/make-og.mjs — tokens and composition mirror the site hero. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: 'Archivo Variable';
+    src: url('../node_modules/@fontsource-variable/archivo/files/archivo-latin-standard-normal.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-stretch: 62.5% 125%;
+  }
+  @font-face {
+    font-family: 'Martian Mono Variable';
+    src: url('../node_modules/@fontsource-variable/martian-mono/files/martian-mono-latin-wght-normal.woff2') format('woff2-variations');
+    font-weight: 100 800;
+  }
+
+  :root {
+    --bg: oklch(0.145 0.007 75);
+    --ink: oklch(0.935 0.005 80);
+    --muted: oklch(0.71 0.015 75);
+    --amber: oklch(0.78 0.135 68);
+    --green: oklch(0.76 0.13 150);
+    --glow: oklch(0.78 0.135 68 / 0.09);
+    --grid-line: oklch(0.78 0.135 68 / 0.05);
+  }
+
+  * { margin: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Archivo Variable', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .field {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(46rem 32rem at 16% 12%, var(--glow), transparent 65%),
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 100% 100%, 56px 56px, 56px 56px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 96%);
+  }
+
+  .card {
+    position: relative;
+    height: 100%;
+    padding: 64px 72px 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Martian Mono Variable', monospace;
+    font-size: 19px;
+    font-weight: 450;
+    letter-spacing: 0.02em;
+    color: var(--green);
+  }
+  .status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background-color: var(--green);
+    box-shadow: 0 0 0 5px oklch(0.76 0.13 150 / 0.18);
+  }
+
+  .name {
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .display {
+    margin-top: 10px;
+    font-size: 122px;
+    font-stretch: 115%;
+    font-weight: 680;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    color: var(--ink);
+  }
+
+  .footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: 'Martian Mono Variable', monospace;
+    font-size: 21px;
+    font-weight: 450;
+    letter-spacing: 0.02em;
+  }
+  .domain { color: var(--amber); }
+  .where { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="field"></div>
+  <div class="card">
+    <p class="status"><span class="status-dot"></span>Open to full-time, part-time and contract work</p>
+    <div>
+      <p class="name">Shay Henderson</p>
+      <h1 class="display">Infrastructure<br />&amp; Cloud</h1>
+    </div>
+    <p class="footer">
+      <span class="domain">shayhenderson.dev</span>
+      <span class="where">Scotland, UK</span>
+    </p>
+  </div>
+</body>
+</html>
