@@ -15,7 +15,6 @@ export const identity = {
   email: 'contact@shayhenderson.dev',
   github: 'https://github.com/HendoBuilds',
   linkedin: 'https://www.linkedin.com/in/shay-henderson',
-  x: 'https://x.com/HendoBuilds',
   site: 'https://shayhenderson.dev',
 };
 

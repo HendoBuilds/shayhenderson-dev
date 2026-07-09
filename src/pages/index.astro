@@ -27,7 +27,7 @@ const personSchema = {
     addressRegion: 'Scotland',
     addressCountry: 'GB',
   },
-  sameAs: [identity.github, identity.linkedin, identity.x],
+  sameAs: [identity.github, identity.linkedin],
 };
 ---
 
@@ -256,7 +256,6 @@ const personSchema = {
       <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3">
         <a href={identity.github} class="link-quiet text-sm font-medium">GitHub</a>
         <a href={identity.linkedin} class="link-quiet text-sm font-medium">LinkedIn</a>
-        <a href={identity.x} class="link-quiet text-sm font-medium">X</a>
         <a href="/cv" class="link-quiet text-sm font-medium">CV</a>
       </div>
       <p class="mt-8 text-sm text-muted">{identity.location} · Remote</p>
