@@ -11,7 +11,7 @@ export const identity = {
   location: 'Scotland, UK',
   availability: 'Open to full-time, part-time and contract work',
   pitch:
-    'I keep production systems healthy — seven years of incident response, automation and internal tooling across Azure, GCP and Cloudflare.',
+    'I keep production systems healthy: seven years of incident response, automation and internal tooling across Azure, GCP and Cloudflare.',
   email: 'contact@shayhenderson.dev',
   github: 'https://github.com/HendoBuilds',
   linkedin: 'https://www.linkedin.com/in/shay-henderson',
@@ -34,17 +34,17 @@ export const experience: Job[] = [
   {
     company: 'jpg.store',
     title: 'QA & Support Engineer',
-    dates: 'Sep 2022 — Jun 2026',
+    dates: 'Sep 2022 – Jun 2026',
     where: 'Remote',
     highlights: [
-      'Hands-on production operations for a Cardano NFT marketplace with 168k+ users — incident response across GCP and Cloudflare, healing stuck transactions and recovering crashed services.',
+      'Hands-on production operations for a Cardano NFT marketplace with 168k+ users: incident response across GCP and Cloudflare, healing stuck transactions and recovering crashed services.',
       'Built internal Retool dashboards for transaction healing, listings and process health, and shipped features and fixes to the Next.js frontend.',
       'Led the move from bespoke ticketing to Intercom: help centre, AI workflows and a chatbot resolving 64.6% of conversations before they reached a human.',
       'Started on weekend tickets; finished on the final team of seven, trusted with escalation calls and working directly with the CEO, CTO and CPO.',
     ],
     bullets: [
       'Production operations for a Cardano NFT marketplace with 168k+ users: healed stuck transactions, recovered crashed services, and ran the blockchain scraper with an eye on compute costs.',
-      'GCP and Cloudflare incident response — cache management, network troubleshooting, on-chain investigation. Worked directly with the CEO, CTO and CPO, trusted with escalation calls.',
+      'GCP and Cloudflare incident response: cache management, network troubleshooting, on-chain investigation. Worked directly with the CEO, CTO and CPO, trusted with escalation calls.',
       'Built internal Retool dashboards for transaction healing, listings and process health; contributed design rollouts, bugfixes and features to the Next.js frontend.',
       'Led the migration from bespoke ticketing to Intercom: help centre, AI workflows and a chatbot deflecting 64.6% of conversations. Wrote 150+ articles read by 60k+ people a year.',
       'Started on weekend tickets, earned production-infrastructure access, and stayed to the final team of seven as the company wound down.',
@@ -53,28 +53,28 @@ export const experience: Job[] = [
   {
     company: 'SecurityBot',
     title: 'Support Engineer (Contract)',
-    dates: 'Apr 2025 — Apr 2026',
+    dates: 'Apr 2025 – Apr 2026',
     where: 'Remote',
     highlights: [
-      'Reworked GitBook documentation into a production-ready knowledge base and ran pre-release QA — contract work delivered across two engagements.',
+      'Reworked GitBook documentation into a production-ready knowledge base and ran pre-release QA across two contract engagements.',
     ],
     bullets: [
-      'Reworked GitBook documentation into a production-ready knowledge base and ran pre-release QA — contract work delivered across two engagements.',
+      'Reworked GitBook documentation into a production-ready knowledge base and ran pre-release QA across two contract engagements.',
     ],
   },
   {
     company: 'MacDIT',
     title: 'IT Support Analyst',
-    dates: 'Jun 2019 — Apr 2024',
+    dates: 'Jun 2019 – Apr 2024',
     where: 'Bathgate, Scotland',
     highlights: [
       'Apprentice to third-line over five years at an MSP serving Scottish business clients.',
-      'The Microsoft stack end to end — Azure, M365, Exchange Online, Entra ID, Intune — with MFA/SSO and conditional-access rollouts, tenant setups and mailbox migrations.',
+      'The Microsoft stack end to end (Azure, M365, Exchange Online, Entra ID, Intune): MFA/SSO and conditional-access rollouts, tenant setups and mailbox migrations.',
       'Networking (Meraki and DrayTek VLANs/VPNs) through the COVID remote-access push; server, DC and SQL builds, Hyper-V, Veeam DR; PowerShell against the Graph and Azure APIs.',
     ],
     bullets: [
       'Apprentice to third-line over five years at an MSP serving Scottish business clients.',
-      'Microsoft stack end to end: Azure (VMs, storage, billing), M365, Exchange Online, SharePoint, AD, Entra ID, Intune — MFA/SSO and conditional-access rollouts, tenant setups, mailbox migrations.',
+      'Microsoft stack end to end: Azure (VMs, storage, billing), M365, Exchange Online, SharePoint, AD, Entra ID, Intune; MFA/SSO and conditional-access rollouts, tenant setups, mailbox migrations.',
       'VLAN/VPN networking (Meraki, DrayTek) including the COVID remote-access push; server, DC and SQL builds, Hyper-V, Veeam DR; PowerShell against the Graph and Azure APIs.',
     ],
   },
@@ -97,7 +97,7 @@ export const projects: Project[] = [
   {
     name: 'Skaldic',
     blurb:
-      'Desktop app that turns MIDI files into playable Mordhau songs — track arrangement across lute and flute, octave shifting, preview, then sent into the game to play via LuteMod. Open source, built with Tauri and Rust, with a Windows installer and signed auto-updates.',
+      'Desktop app that turns MIDI files into playable Mordhau songs: track arrangement across lute and flute, octave shifting, preview, then sent into the game to play via LuteMod. Open source, built with Tauri and Rust, with a Windows installer and signed auto-updates.',
     tags: ['Open source', 'Tauri', 'Rust', 'v0.2.0'],
     href: 'https://github.com/HendoBuilds/skaldic',
     linkLabel: 'github.com/HendoBuilds/skaldic',
@@ -106,7 +106,7 @@ export const projects: Project[] = [
   {
     name: 'Foxhole Hub',
     blurb:
-      'Live war tracker for Foxhole — victory points, casualties and an interactive faction-control map, refreshed from the game’s API every ten minutes, with community streams and videos alongside.',
+      'Live war tracker for Foxhole: victory points, casualties and an interactive faction-control map, refreshed from the game’s API every ten minutes, with community streams and videos alongside.',
     tags: ['Live'],
     href: 'https://foxholehub.com',
     linkLabel: 'foxholehub.com',
@@ -114,14 +114,14 @@ export const projects: Project[] = [
   {
     name: 'JPG Store Help Center',
     blurb:
-      'Support platform for a 168k-user marketplace: led the migration from bespoke ticketing to Intercom, designed the AI workflows and wrote most of its 150+ articles — 60k+ readers a year, 64.6% of conversations resolved before reaching a human.',
+      'Support platform for a 168k-user marketplace: led the migration from bespoke ticketing to Intercom, designed the AI workflows and wrote most of its 150+ articles. 60k+ readers a year, 64.6% of conversations resolved before reaching a human.',
     tags: ['Intercom', 'AI workflows'],
     note: 'Taken offline when jpg.store ceased operations.',
   },
   {
     name: 'SecurityBot Knowledge Hub',
     blurb:
-      'Audited SecurityBot surface by surface and documented the product from the ground up — turning scattered docs into a finished GitBook knowledge base, structured to stay maintainable and extensible.',
+      'Audited SecurityBot surface by surface and documented the product from the ground up, turning scattered docs into a finished GitBook knowledge base, structured to stay maintainable and extensible.',
     tags: ['GitBook', 'Contract'],
     href: 'https://securitybot.gitbook.io/securitybot-knowledge-hub',
     linkLabel: 'securitybot.gitbook.io',
@@ -193,17 +193,17 @@ export const education = [
   {
     name: 'Diploma SCQF Level 8, Information Security',
     org: 'QA Apprenticeships',
-    dates: '2022 — 2023',
+    dates: '2022 – 2023',
   },
   {
     name: 'Diploma SCQF Level 8, IT & Telecommunications',
     org: 'QA Apprenticeships',
-    dates: '2020 — 2021',
+    dates: '2020 – 2021',
   },
   {
     name: 'HNC Computer Science',
     org: 'West Lothian College',
-    dates: '2018 — 2019',
+    dates: '2018 – 2019',
   },
 ];
 
@@ -211,12 +211,12 @@ export const certifications = [
   {
     name: 'GitHub Administration',
     org: 'Microsoft',
-    dates: 'Sep 2025 — Oct 2027',
+    dates: 'Sep 2025 – Oct 2027',
   },
   {
     name: 'GitHub Foundations',
     org: 'GitHub',
-    dates: 'Mar 2025 — Mar 2028',
+    dates: 'Mar 2025 – Mar 2028',
   },
 ];
 

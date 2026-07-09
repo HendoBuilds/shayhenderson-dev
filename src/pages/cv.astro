@@ -12,8 +12,8 @@ import {
 ---
 
 <Base
-  title="CV — Shay Henderson, Infrastructure & Cloud"
-  description={`CV of ${identity.name} — ${identity.role}. ${identity.pitch}`}
+  title="CV · Shay Henderson, Infrastructure & Cloud"
+  description={`CV of ${identity.name}, ${identity.role}. ${identity.pitch}`}
   showNav={false}
 >
   <div class="cv-page mx-auto max-w-[52rem] px-5 py-14 sm:px-8 sm:py-20">
@@ -91,7 +91,7 @@ import {
         [...education, ...certifications].map((e) => (
           <li class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
             <p class="text-[0.95rem] font-medium">
-              {e.name} <span class="text-muted">— {e.org}</span>
+              {e.name} <span class="text-muted">· {e.org}</span>
             </p>
             <p class="meta">{e.dates}</p>
           </li>
