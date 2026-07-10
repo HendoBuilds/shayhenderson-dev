@@ -108,6 +108,14 @@ export const projects: Project[] = [
     linkLabel: 'foxholehub.com',
   },
   {
+    name: 'Lochview Kennels',
+    blurb:
+      'Website for a local boarding kennels and daycare, built in plain HTML, CSS and JavaScript and hosted on Cloudflare, with the domain, DNS and email handled alongside.',
+    tags: ['HTML/CSS/JS', 'Cloudflare', 'Microsoft 365'],
+    href: 'https://lochviewkennels.co.uk',
+    linkLabel: 'lochviewkennels.co.uk',
+  },
+  {
     name: 'JPG Store Help Center',
     blurb:
       'Support platform for a 168k-user marketplace: led the migration from bespoke ticketing to Intercom, designed the AI workflows and wrote most of its 150+ articles. 60k+ readers a year, 64.6% of conversations resolved before reaching a human.',
