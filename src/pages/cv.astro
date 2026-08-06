@@ -78,7 +78,10 @@ import {
         skillGroups.map((group) => (
           <div class="sm:grid sm:grid-cols-[13rem_1fr] sm:gap-6">
             <dt class="text-[0.95rem] font-semibold">{group.title}</dt>
-            <dd class="mt-1 text-[0.95rem] leading-relaxed text-muted sm:mt-0">{group.items.join(' · ')}</dd>
+            <dd class="mt-1 text-[0.95rem] leading-relaxed text-muted sm:mt-0">
+              <p>{group.items.join(' · ')}</p>
+              {group.note && <p class="mt-2">{group.note}</p>}
+            </dd>
           </div>
         ))
       }

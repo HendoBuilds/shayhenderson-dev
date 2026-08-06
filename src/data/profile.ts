@@ -132,7 +132,14 @@ export const projects: Project[] = [
   },
 ];
 
-export const skillGroups: { title: string; items: string[] }[] = [
+export interface SkillGroup {
+  title: string;
+  items: string[];
+  /** optional prose line under the list — for a group that needs its proof named */
+  note?: string;
+}
+
+export const skillGroups: SkillGroup[] = [
   {
     title: 'Cloud & Infrastructure',
     items: [
@@ -154,11 +161,14 @@ export const skillGroups: { title: string; items: string[] }[] = [
     items: [
       'M365',
       'Exchange Online',
+      'Mail flow (SPF, DKIM, DMARC, EOP)',
       'SharePoint',
       'Teams',
       'Active Directory',
       'Entra ID',
       'Intune / MDM',
+      'Windows Autopilot',
+      'Defender for Endpoint / Business',
       'MFA / SSO / conditional access',
     ],
   },
@@ -181,15 +191,27 @@ export const skillGroups: { title: string; items: string[] }[] = [
     items: [
       'GitHub Actions',
       'Git',
+      'Linear',
       'Sentry',
       'Metabase',
       'Mixpanel',
       'PostHog',
       'GCP monitoring',
       'Retool',
-      'Intercom + AI workflow design',
-      'AI-assisted development (Claude Code)',
+      'Intercom',
     ],
+  },
+  {
+    title: 'AI-Assisted Development',
+    items: [
+      'Claude Code (subagents, hooks, MCP servers)',
+      'Cursor',
+      'ChatGPT',
+      'Headless and scheduled agent runs',
+      'n8n workflow automation',
+      'AI workflow and chatbot design (Intercom)',
+    ],
+    note: 'I run Claude Code as a system rather than a chat window: subagents for multi-step work, hooks that run detectors and tests after every edit, and scheduled headless runs behind my own automation. Where an AI step does real work in a pipeline, I build validation, timeouts and monitoring around it.',
   },
 ];
 
