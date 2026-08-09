@@ -208,7 +208,6 @@ export const skillGroups: SkillGroup[] = [
       'Cursor',
       'ChatGPT',
       'Headless and scheduled agent runs',
-      'n8n workflow automation',
       'AI workflow and chatbot design (Intercom)',
     ],
     note: 'I run Claude Code as a system rather than a chat window: subagents for multi-step work, hooks that run detectors and tests after every edit, and scheduled headless runs behind my own automation. Where an AI step does real work in a pipeline, I build validation, timeouts and monitoring around it.',
