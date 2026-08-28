@@ -1,0 +1,45 @@
+# CI — the checks that run whether or not anyone is watching.
+#
+# The same typecheck runs locally at the end of every editing session, but that only
+# happens on one machine. This runs it on every push, so a broken commit is caught
+# before it reaches the live site.
+#
+# Deliberately minimal: install, typecheck, build. The site is static and reads no
+# environment variables at build time, so no secrets are needed here.
+
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run type-check
+
+      # A green build is worth gating on here: `astro build` is exactly what ships to
+      # Cloudflare, so it catches styling and asset errors the typecheck cannot see.
+      - name: Build
+        run: npm run build
+
+      # There is no test step yet — building out a test suite is the next planned
+      # piece of work on this repo.
