@@ -1,0 +1,25 @@
+# Dependabot config.
+#
+# The `github-actions` ecosystem is the load-bearing half of pinning the workflow actions
+# in ci.yml to commit SHAs. A commit SHA can't be moved by an attacker — but it also never
+# moves onto a security fix for the action itself, so a pin with nothing watching it rots
+# into a permanent freeze on whatever that commit contained. Dependabot opens a PR bumping
+# the SHA and its trailing version comment, which is what keeps the pin honest.
+#
+# CI runs on Dependabot's PRs like any other push, so a bump that breaks the build is
+# caught before it can be merged.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Group the noise: one PR for all dev-only bumps rather than one per package.
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
