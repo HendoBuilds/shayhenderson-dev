@@ -67,13 +67,13 @@ export const experience: Job[] = [
     dates: 'Jun 2019 – Apr 2024',
     where: 'Bathgate, Scotland',
     highlights: [
-      'Apprentice to third-line over five years at an MSP serving Scottish business clients.',
-      'The Microsoft stack end to end (Azure, M365, Exchange Online, Entra ID, Intune): MFA/SSO and conditional-access rollouts, tenant setups and mailbox migrations.',
+      'Apprentice to third-line over five years at an MSP serving Scottish business clients, working to per-client SLAs.',
+      'The Microsoft stack end to end (Azure, M365, Exchange Online, Entra ID, Intune, Windows Autopilot): MFA/SSO and conditional-access rollouts, Defender for Endpoint, mail flow (SPF, DKIM, DMARC), tenant setups and mailbox migrations.',
       'Networking (Meraki and DrayTek VLANs/VPNs) through the COVID remote-access push; server, DC and SQL builds, Hyper-V, Veeam DR; PowerShell against the Graph and Azure APIs.',
     ],
     bullets: [
-      'Apprentice to third-line over five years at an MSP serving Scottish business clients.',
-      'Microsoft stack end to end: Azure (VMs, storage, billing), M365, Exchange Online, SharePoint, AD, Entra ID, Intune; MFA/SSO and conditional-access rollouts, tenant setups, mailbox migrations.',
+      'Apprentice to third-line over five years at an MSP serving Scottish business clients, working to per-client SLAs.',
+      'Microsoft stack end to end: Azure (VMs, storage, billing), M365, Exchange Online, SharePoint, AD, Entra ID, Intune, Autopilot; MFA/SSO and conditional-access rollouts, Defender for Endpoint, mail flow (SPF, DKIM, DMARC), tenant setups, mailbox migrations.',
       'VLAN/VPN networking (Meraki, DrayTek) including the COVID remote-access push; server, DC and SQL builds, Hyper-V, Veeam DR; PowerShell against the Graph and Azure APIs.',
     ],
   },
