@@ -23,7 +23,7 @@
     "@fontsource-variable/martian-mono": "^5.2.7",
     "@tailwindcss/vite": "^4.3.2",
     "astro": "^7.1.6",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
