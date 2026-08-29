@@ -9,6 +9,7 @@ import {
   certifications,
   openSource,
 } from '../data/profile';
+import { cvProfilePageSchema } from '../data/schema';
 ---
 
 <Base
@@ -16,6 +17,8 @@ import {
   description={`CV of ${identity.name}, ${identity.role}. ${identity.pitch}`}
   showNav={false}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(cvProfilePageSchema)} />
+
   <div class="cv-page mx-auto max-w-[52rem] px-5 py-14 sm:px-8 sm:py-20">
     <!-- header -->
     <header class="flex flex-wrap items-start justify-between gap-6">

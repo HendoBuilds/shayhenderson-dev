@@ -34,6 +34,13 @@ describe('built output smoke tests', () => {
     expect(html).toContain('aria-label="Sections"');
   });
 
+  it('embeds the ProfilePage JSON-LD schema on the CV page', () => {
+    const html = readDistFile('cv/index.html');
+    expect(html).toContain('application/ld+json');
+    expect(html).toContain('"@type":"ProfilePage"');
+    expect(html).toContain('"@type":"Person"');
+  });
+
   it('omits the section nav from the 404 page', () => {
     const html = readDistFile('404.html');
     expect(html).not.toContain('aria-label="Sections"');
