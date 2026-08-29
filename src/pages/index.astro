@@ -38,7 +38,7 @@ const personSchema = {
   title="Shay Henderson · Infrastructure & Cloud"
   description={`${identity.pitch} ${identity.availability}.`}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
 
   <!-- ============ hero ============ -->
   <section class="relative overflow-hidden">
