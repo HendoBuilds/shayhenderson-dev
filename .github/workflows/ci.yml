@@ -41,5 +41,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # There is no test step yet — building out a test suite is the next planned
-      # piece of work on this repo.
+      # Runs after Build: the smoke tests read the built dist/ output.
+      - name: Test
+        run: npm test

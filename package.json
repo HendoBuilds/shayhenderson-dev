@@ -11,6 +11,7 @@
     "type-check": "astro check",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "vitest run",
     "deploy": "astro build && wrangler deploy",
     "cv-pdf": "node scripts/make-cv-pdf.mjs",
     "og": "node scripts/make-og.mjs",
@@ -28,6 +29,7 @@
     "@astrojs/check": "^0.9.10",
     "playwright": "^1.61.1",
     "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
     "wrangler": "^4.108.0"
   }
 }
