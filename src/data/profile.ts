@@ -13,7 +13,7 @@ export const identity = {
   pitch:
     'I keep production systems healthy and build for the web: seven years of incident response, automation, internal tooling and production frontends across Azure, GCP and Cloudflare.',
   email: 'contact@shayhenderson.dev',
-  github: 'https://github.com/HendoBuilds',
+  github: 'https://github.com/shayhenderson',
   linkedin: 'https://www.linkedin.com/in/shay-henderson',
   site: 'https://shayhenderson.dev',
 };
@@ -97,8 +97,8 @@ export const projects: Project[] = [
     blurb:
       'Desktop app that turns MIDI files into playable Mordhau songs: track arrangement across lute and flute, octave shifting, preview, then sent into the game to play via LuteMod. Open source, built with Tauri and Rust, with a Windows installer and signed auto-updates.',
     tags: ['Open source', 'Tauri', 'Rust', 'v0.2.0'],
-    href: 'https://github.com/HendoBuilds/skaldic',
-    linkLabel: 'github.com/HendoBuilds/skaldic',
+    href: 'https://github.com/shayhenderson/skaldic',
+    linkLabel: 'github.com/shayhenderson/skaldic',
     featured: true,
   },
   {
