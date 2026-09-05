@@ -34,3 +34,6 @@ DESIGN.md
 
 # wrangler dev state
 .wrangler/
+
+# Claude Code per-machine overrides
+.claude/settings.local.json
